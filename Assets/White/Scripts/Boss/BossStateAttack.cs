@@ -5,11 +5,26 @@ using UnityEngine;
 
 namespace White
 {
+    /// <summary>
+    /// This class defines what the boss does when it is in attack mode.
+    /// </summary>
     public class BossStateAttack : BossState
     {
+        /// <summary>
+        /// The delay between each projectile being shot.
+        /// </summary>
         float timeBetweenShots = 0.5f;
+
+        /// <summary>
+        /// The time left until the next projectile is fired.
+        /// </summary>
         float timeUntilNextShot = 0;
 
+        /// <summary>
+        /// This function updates the boss each frame.
+        /// </summary>
+        /// <param name="boss"> The boss that this state applies to. </param>
+        /// <returns> A new state. </returns>
         public override BossState Update(WhiteBossController boss)
         {
             Debug.Log("attack");
@@ -24,7 +39,7 @@ namespace White
             {
                 boss.ShootProjectile();
                 timeUntilNextShot = timeBetweenShots;
-            }
+            } // ends the if statement
 
             boss.ShootProjectile();*/
 
@@ -36,6 +51,6 @@ namespace White
             // switch to dead state
 
             return null;
-        }
-    }
-}
+        } // ends the Update() function
+    } // ends the BossStateAttack class
+} // ends the White namespace
