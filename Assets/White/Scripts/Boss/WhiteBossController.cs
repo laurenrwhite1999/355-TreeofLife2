@@ -52,6 +52,11 @@ namespace White
         public Transform attackTarget { get; private set; }
 
         /// <summary>
+        /// The amount of hits the boss has left before it dies.
+        /// </summary>
+        public static int bossHitsLeft = 3;
+
+        /// <summary>
         /// This function finds the player and sets it as the boss's attack target.
         /// </summary>
         void Start()
